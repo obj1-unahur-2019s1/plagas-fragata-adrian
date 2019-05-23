@@ -1,0 +1,17 @@
+import plagas.*
+import elementos.*
+
+describe "test de plagas"{
+	
+	var hogar1 = new Hogar(nivelDeMugre = 15, confort = 35)
+	var huerta1 = new Huerta(capacidadDeProduccion = 200)
+	var mascota1 = new Mascota(nivelDeSalud = 220)
+	
+	test "cucaracha" {
+	var cuca = new Cucaracha(poblacion = 20, pesoPromedio = 15)
+	
+	assert.equals(10, cuca.nivelDeDanio())
+	assert.equals(true, cuca.transmiteEnfermedades())
+	
+	}
+}

@@ -1,0 +1,23 @@
+import elementos.*
+
+
+describe "test de elementos"{
+	
+	var hogar1 = new Hogar(nivelDeMugre = 15, confort = 35)
+	var huerta1 = new Huerta(capacidadDeProduccion = 200)
+	var mascota1 = new Mascota(nivelDeSalud = 220)
+	
+	test "barrio.esBueno()" {
+	
+
+	
+	var barrio1 = new Barrio()
+	barrio1.agregar(hogar1)
+	barrio1.agregar(huerta1)
+	barrio1.agregar(mascota1)
+	
+	assert.equals(true, barrio1.esBueno())
+
+	}
+}
+
