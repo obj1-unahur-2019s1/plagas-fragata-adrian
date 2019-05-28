@@ -5,6 +5,7 @@ class Plaga {
 	var property poblacionMinima = 10
 	
 	method transmiteEnfermedades() { return poblacionMinima >= 10 } 
+	method atacar(elemento) { poblacion *= 1.10; elemento.atacado(self) }
 	  
 }
 
@@ -16,12 +17,16 @@ class Cucaracha inherits Plaga {
 	 * si repito en la subclase un metodo que tengo en la superclase 
 	 */
 	override method transmiteEnfermedades() { return super() and pesoPromedio >= 10 }
-	method atacar(elemento) { poblacion *= 1.10; pesoPromedio += 2; elemento.atacado(self) }
+	override method atacar(elemento) { super(elemento); pesoPromedio += 2 }
 }
 
 class Pulga inherits Plaga {
 	
 	method nivelDeDanio() { return poblacion * 2 }
+}
+
+class Garrapatas inherits Pulga {
+	override method atacar(elemento) { poblacion *= 1.20; elemento.atacado(self)}
 }
 
 class Mosquito inherits Plaga {
